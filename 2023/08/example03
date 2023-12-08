@@ -1,0 +1,10 @@
+LR
+
+LLA = (LLB, XXX)
+LLB = (XXX, LLZ)
+LLZ = (LLB, XXX)
+TTA = (TTB, XXX)
+TTB = (TTC, TTC)
+TTC = (TTZ, TTZ)
+TTZ = (TTB, TTB)
+XXX = (XXX, XXX)
