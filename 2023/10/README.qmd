@@ -1,0 +1,29 @@
+---
+title : 2023 Advent of Code Day 10
+filters:
+    - include-code-files
+format: gfm
+---
+
+# The Puzzle
+## --- Part One ---
+
+## Part 1 Solution
+
+
+```{.r include="sol.R" start-line=5 end-line=18}
+```
+
+
+**Answer ?????**
+
+## --- Part Two ---
+
+
+## Part 2 Solution
+
+
+```{.r include="sol.R" start-line=20 end-line=27}
+```
+
+**Answer ?????**
