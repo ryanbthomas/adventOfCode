@@ -119,7 +119,10 @@ result2 <- sum(nums)
 ### Method 3
 
 This solution comes from Adam Austin via mastodon
-[https://github.com/ataustin/advent-of-code/blob/main/y2023/d01/solution.R]()
+<iframe src="https://fosstodon.org/@ataustin/111507635010209091/embed" class="mastodon-embed" style="max-width: 100%; border: 0" width="400" allowfullscreen="allowfullscreen"></iframe>
+<script src="https://fosstodon.org/embed.js" async="async"></script>
+<!-- [https://github.com/ataustin/advent-of-code/blob/main/y2023/d01/solution.R]()
+-->
 
 ``` r
 decode <- function(input) {
