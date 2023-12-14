@@ -2,25 +2,14 @@ base::load("common_functions.Rdata")
 
 day_folder <- "2023/01"
 
+# orig solution to part 1
 parser <- function(x) {
     strsplit(x, "")
-    
-}
-
-parser2 <- function(x) {
-    x
 }
 
 input_parser <- function(file) {
     read_input(file.path(day_folder, file), list(parser))
 }
-
-input_parser2<- function(file) {
-    read_input(file.path(day_folder, file), list(parser2))
-}
-
-test_input <- input_parser("example")
-test_input2 <- input_parser2("example")
 
 find_first_digit <- function(x) {
     for(i in seq_along(x)) {
@@ -28,11 +17,29 @@ find_first_digit <- function(x) {
     }
 }
 
+make_num_from_first_and_last <- function(x) {
+    as.integer(paste0(find_first_digit(x), find_first_digit(rev(x))))
+}
+
+# method 2
+parser2 <- function(x) {
+    x
+}
+
+input_parser2<- function(file) {
+    read_input(file.path(day_folder, file), list(parser2))
+}
+
 find_digits <- function(x, pattern = "[0-9]") {
     tmp <- regmatches(x, gregexec(pattern, x, perl = TRUE))
     num_str <- lapply(tmp, function(x) paste0(x[1], x[length(x)]))
     as.integer(unlist(num_str))
 }
+
+test_input <- input_parser("example")
+test_input2 <- input_parser2("example")
+
+
 
 map_spelling_to_digit <- function(x, direction = "front") {
     if (direction == "back") {
@@ -170,12 +177,17 @@ transform_strings <- function(input) {
 cat(cli::col_br_magenta("=============== Part 1 ============= "), "\n")
 input <- input_parser("input")
 
+part1_tictoc <- data.frame(
+    method = c("method 1", "method 2", "method 3"),
+    elap = c(0, 0, 0)
+)
 cli::cli_alert_info("trying method 1")
 start_time <- Sys.time()
 nums <- unlist(lapply(input[[1]], make_num_from_first_and_last))
 result1 <- sum(nums)
 stop_time <- Sys.time()
 tictoc <- as.numeric(stop_time - start_time)
+part1_tictoc$elap[1] <- tictoc
 cli::cli_alert_success("Elap time: {tictoc} secs")
 
 input2 <- input_parser2("input")
@@ -185,6 +197,7 @@ nums <- find_digits(input2[[1]])
 result2 <- sum(nums)
 stop_time <- Sys.time()
 tictoc <- as.numeric(stop_time - start_time)
+part1_tictoc$elap[2] <- tictoc
 cli::cli_alert_success("Elap time: {tictoc} secs")
 
 cli::cli_alert_info("trying method 3")
@@ -192,7 +205,10 @@ start_time <- Sys.time()
 result3 <- decode(input2[[1]])
 stop_time <- Sys.time()
 tictoc <- as.numeric(stop_time - start_time)
+part1_tictoc$elap[3] <- tictoc
 cli::cli_alert_success("Elap time: {tictoc} secs")
+
+write.csv(part1_tictoc, file = file.path(day_folder, "timings_part1.csv"), row.names = FALSE)
 
 cli::cli_alert_info("The Part 1 answer is {result1}")
 if (result1 == result2) cli::cli_alert_info("Method 2 and Method 1 match")

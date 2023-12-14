@@ -4,7 +4,7 @@ common_functions.Rdata: R/load_common_files.R $(common_files)
 	Rscript $<
 
 2021: 2021-01 2021-02 2021-03 2021-04 2021-05 2021-06
-2023: 2023-01 2023-02 2023-03 2023-04 2023-05 2023-06 2023-07 2023-08
+2023: 2023-01 2023-02 2023-03 2023-04 2023-05 2023-06 2023-07 2023-08 2023-09 2023-10 2023-11
 
 2021-01: common_functions.Rdata 2021/01/sol.R
 	Rscript 2021/01/sol.R
@@ -50,3 +50,15 @@ common_functions.Rdata: R/load_common_files.R $(common_files)
 
 2023-08: common_functions.Rdata 2023/08/sol.R
 	Rscript 2023/08/sol.R
+
+2023-09: common_functions.Rdata 2023/09/sol.R
+	Rscript 2023/09/sol.R
+
+2023-10: common_functions.Rdata 2023/10/sol.R
+	Rscript 2023/10/sol.R
+
+2023-11: common_functions.Rdata 2023/11/sol.R
+	Rscript 2023/11/sol.R
+
+2023-12: common_functions.Rdata 2023/12/sol.R
+	Rscript 2023/12/sol.R
