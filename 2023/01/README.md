@@ -139,10 +139,11 @@ decode(input)
 
 ## Comparison of methods
 
-        method       elap
-    1 method 1 0.56473589
-    2 method 2 0.27469373
-    3 method 3 0.01838946
+| method   |      elap |
+|:---------|----------:|
+| method 1 | 0.5647359 |
+| method 2 | 0.2746937 |
+| method 3 | 0.0183895 |
 
 ## — Part Two —
 

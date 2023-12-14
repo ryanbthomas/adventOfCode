@@ -84,7 +84,8 @@ decode(input)
 ## Comparison of methods 
 
 ```{r timings, echo=FALSE}
-read.csv("timings_part1.csv")
+read.csv("timings_part1.csv") |>
+knitr::kable()
 ```
 
 ## --- Part Two ---
