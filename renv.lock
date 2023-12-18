@@ -96,6 +96,13 @@
       ],
       "Hash": "89e6d8219950eac806ae0c489052048a"
     },
+    "collections": {
+      "Package": "collections",
+      "Version": "0.3.7",
+      "Source": "Repository",
+      "Repository": "RSPM",
+      "Hash": "90a0eda114ab0bef170ddbf5ef0cd93f"
+    },
     "crayon": {
       "Package": "crayon",
       "Version": "1.5.2",
